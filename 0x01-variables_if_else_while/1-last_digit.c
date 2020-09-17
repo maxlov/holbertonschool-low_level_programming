@@ -22,7 +22,7 @@ int main(void)
 	if (f > 5)
 		printf("and is greater than 5\n");
 	if (f == 0)
-		printf("and is zero\n");
+		printf("and is 0\n");
 	if (f < 6 && !(f == 0))
 		printf("and is less than 6 and not 0\n");
 	return (0);
