@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * print_alphabet_x10 - prints alphabet 10x in lowercase to stdout
  *
@@ -16,6 +17,6 @@ void print_alphabet_x10(void)
 			_putchar(ch);
 			ch++;
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
