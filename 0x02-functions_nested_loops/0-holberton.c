@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	char holberton[10] = "Holberton\n";
+	char holberton[] = "Holberton\n";
 	int n;
 
-	for (n = 0; n <= 10; n++)
+	for (n = 0; holberton[n] != '\0'; n++)
 	{
 	_putchar(holberton[n]);
 	}
