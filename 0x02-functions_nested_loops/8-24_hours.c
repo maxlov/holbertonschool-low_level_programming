@@ -10,16 +10,16 @@ void jack_bauer(void)
 {
 	int min_ten, min_one, sec_ten, sec_one;
 
-	for(min_ten = 0; min_ten < 3; min_ten++)
+	for (min_ten = 0; min_ten < 3; min_ten++)
 	{
-		for(min_one = 0; min_one < 10; min_one++)
+		for (min_one = 0; min_one < 10; min_one++)
 		{
-			for(sec_ten = 0; sec_ten < 6; sec_ten++)
+			for (sec_ten = 0; sec_ten < 6; sec_ten++)
 			{
-				for(sec_one = 0; sec_one < 10; sec_one++)
+				for (sec_one = 0; sec_one < 10; sec_one++)
 				{
 					if ((min_ten == 2) && (min_one > 3))
-					    continue;
+						continue;
 					_putchar('0' + min_ten);
 					_putchar('0' + min_one);
 					_putchar(':');
