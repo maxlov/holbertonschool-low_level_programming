@@ -6,7 +6,7 @@
  * Return: 0
  */
 
-int main (void)
+int main(void)
 {
 	int n;
 
@@ -22,7 +22,7 @@ int main (void)
 			continue;
 		}
 		printf("%d", n);
-		if (n != 100;)
+		if (n != 100)
 			printf(" ");
 	}
 	printf("\n");
