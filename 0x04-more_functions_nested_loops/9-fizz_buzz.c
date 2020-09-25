@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -22,7 +21,9 @@ int main (void)
 			printf(" ");
 			continue;
 		}
-		printf("%d ", n);
+		printf("%d", n);
+		if (n != 100;)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
