@@ -44,6 +44,8 @@ char *cap_string(char *s)
 {
 	int i;
 
+	if (lower_comp(s[0]) == 1)
+		s[0] -= 32;
 	for (i = 0; s[i] != '\0'; i++)
 		if (seperator_comp(s[i - 1]) == 1 && lower_comp(s[i]) == 1)
 			s[i] -= 32;
