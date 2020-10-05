@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  * set_string - sets value of a pointer to a char
- * s: double pointer
- * to: pointer
+ * **s: double pointer
+ * *to: pointer
  *
  * Return: nothing
  */
