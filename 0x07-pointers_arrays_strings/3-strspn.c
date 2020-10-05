@@ -10,11 +10,14 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, number_of_bytes;
+	int i, j, number = 0, prev_number = -1;
 
-	for (i = 0; s[i] != ','; i++)
+	for (i = 0; s[i] && number != prev_number; i++)
+	{
 		for (j = 0; *(accept + j); j++)
 			if (s[i] == accept[j])
-				number_of_bytes++;
-	return (number_of_bytes);
+				number++;
+		prev_number++;
+	}
+		return (number);
 }
