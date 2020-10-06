@@ -10,19 +10,18 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int needle_length;
+	int pos1 = 0, pos2, count;
 
-	while (*haystack++)
+	while (needle[count] != 0)
+		count++;
+	if (count < 1)
+	return (haystack);
+	while (haystack[pos1] != 0)
 	{
-		needle_length = 0;
-		while (*haystack == *needle)
-		{
-			needle_length++;
-			haystack++;
-			needle++;
-			if (!*needle)
-				return (haystack - needle_length);
-		}
+		for (pos2 = 0; haystack[pos1 + pos2] == needle[pos2]; pos2++)
+			if (needle[pos2] == 0)
+				return (haystack + pos1);
+		pos1++;
 	}
 	return (NULL);
 }
