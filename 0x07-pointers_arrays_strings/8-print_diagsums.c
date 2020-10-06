@@ -1,4 +1,4 @@
-101-crackme_password#include "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
 /**
  * print_diagsums - prints sums of diagonals
