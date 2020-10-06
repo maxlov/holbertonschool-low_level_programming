@@ -26,8 +26,11 @@ char *_strchr(char *s, char c)
 
 char *_strpbrk(char *s, char *accept)
 {
-	while(*s)
-		if(_strchr(accept, *s++))
-			return (char*)--s;
+	while (*s)
+		if (_strchr(accept, *s++))
+		{
+			--s;
+			return (s);
+		}
 	return (0);
 }
