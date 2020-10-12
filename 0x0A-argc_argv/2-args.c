@@ -1,4 +1,4 @@
-B#include <stdio.h>
+#include <stdio.h>
 
 /**
  * main - prints number of arguments passed into program
