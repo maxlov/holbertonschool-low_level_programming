@@ -1,4 +1,4 @@
-#include <stdio.h>
+B#include <stdio.h>
 
 /**
  * main - prints number of arguments passed into program
@@ -11,6 +11,6 @@
 int main(int argc __attribute__((unused)), char *argv[])
 {
 	while (*argv)
-		printf ("%s\n", *argv++);
+		printf("%s\n", *argv++);
 	return (0);
 }
