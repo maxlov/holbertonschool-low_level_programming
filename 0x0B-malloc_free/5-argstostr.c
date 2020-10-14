@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * str_concat - concatenates two strings
+ * argstostr - concatenates all strings of arg
  * @ac: number of arguments
  * @av: array of arguments
  *
@@ -21,7 +21,10 @@ char *argstostr(int ac, char **av)
 			total_length++;
 	all_args = malloc((total_length + ac) * sizeof(char));
 	if (all_args == NULL)
+	{
+		free(all_args);
 		return (NULL);
+	}
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
