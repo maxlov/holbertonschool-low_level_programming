@@ -13,7 +13,7 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i;
+	int i = 0;
 	char *name_cpy, *owner_cpy;
 	dog_t *hot_dog;
 
@@ -38,10 +38,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(hot_dog);
 		return (NULL);
 	}
-	for (i = 0; name[i] != '\0'; i++)
+	for (i = 0; name[i]; i++)
 		name_cpy[i] = name[i];
 	name_cpy[i] = '\0';
-	for (i = 0; owner[i] != '\0'; i++)
+	for (i = 0; owner[i]; i++)
 		owner_cpy[i] = owner[i];
 	owner_cpy[i] = '\0';
 	hot_dog->name = name_cpy;
