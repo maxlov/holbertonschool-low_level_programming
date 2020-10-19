@@ -22,11 +22,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	while (owner[strlen2] != '\0')
 		strlen2++;
 	hot_dog = malloc(sizeof(dog_t));
-	name_cpy = malloc((strlen1 + 1) * sizeof(char));
-	owner_cpy = malloc(strlen2 * sizeof(char));
 	if (hot_dog == NULL)
 	{
-		free (hot_dog);
+		free(hot_dog);
+		return (NULL);
+	}
+	name_cpy = malloc((strlen1 + 1) * sizeof(char));
+	if (name_cpy == NULL)
+	{
+		free(name_cpy);
+		return (NULL);
+	}
+	owner_cpy = malloc(strlen2 * sizeof(char));
+	if (owner_cpy == NULL)
+	{
+		free(name_cpy);
 		return (NULL);
 	}
 	name_cpy = name;
