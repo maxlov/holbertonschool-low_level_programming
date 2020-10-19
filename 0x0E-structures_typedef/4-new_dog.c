@@ -24,6 +24,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	hot_dog = malloc(sizeof(dog_t));
 	name_cpy = malloc((strlen1 + 1) * sizeof(char));
 	owner_cpy = malloc(strlen2 * sizeof(char));
+	if (hot_dog == NULL)
+	{
+		free (hot_dog);
+		return (NULL);
+	}
 	name_cpy = name;
 	owner_cpy = owner;
 	hot_dog->name = name_cpy;
