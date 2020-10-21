@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	n1 = atoi(argv[1]);
-        n2 = atoi(argv[3]);
+	n2 = atoi(argv[3]);
 	symbol = argv[2][0];
-	if (((symbol = '\\') || (symbol == '%')) && n2 == 0)
+	if (((symbol == '\\') || (symbol == '%')) && n2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
