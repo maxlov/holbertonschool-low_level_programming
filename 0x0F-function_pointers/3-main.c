@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
 	symbol = argv[2][0];
-	if (((symbol == '\\') || (symbol == '%')) && n2 == 0)
+	if (((symbol == '/') || (symbol == '%')) && n2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 	result = get_op_func(argv[2])(n1, n2);
-	if (argv[2][1] != '\0')
+	if (argv[2][1] != '\0' || get_op_func(argv[2]) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
