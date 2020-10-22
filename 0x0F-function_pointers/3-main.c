@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * main - calculates answer from args
+ * main - calculates answer from args. hi kevin
  * @argc: number of args
  * @argv: array of args
  * Return: zero
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if ((symbol == '/' && n2 == 0) || (symbol == '%' && n2 == 0))
+	if ((symbol == '/' || symbol == '%') && n2 == 0)
 	{
 		printf("Error\n");
 		exit(100);

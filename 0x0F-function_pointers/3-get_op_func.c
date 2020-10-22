@@ -4,8 +4,8 @@
 
 
 /**
- * get_op_func - Selects correct function to perform the op asked by user
- * @s: operation
+ * get_op_func - Selects correct function to perform the op asked by user.
+ * @s: operatio. hi kevin
  *
  * Return: NULL if s does not match expected operators
  */
@@ -23,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (*(ops + i)->op)
+	while (*(ops + i)->f)
 	{
 		if (*(ops + i)->op == *s)
 			return (*(ops + i)->f);
