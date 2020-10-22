@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
 	int result, n1, n2;
 	char symbol;
 
-	n1 = atoi(argv[1]);
-	n2 = atoi(argv[3]);
-	symbol = argv[2][0];
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	n1 = atoi(argv[1]);
+        n2 = atoi(argv[3]);
+        symbol = argv[2][0];
 	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
 	{
 		printf("Error\n");
