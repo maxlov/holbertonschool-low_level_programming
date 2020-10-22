@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if (((symbol == '/') || (symbol == '%')) && n2 == 0)
+	if ((symbol == '/' || symbol == '%') && n2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
