@@ -13,6 +13,7 @@
 unsigned int fmt_len(const char * const format)
 {
 	int i = 0, format_length = 0;
+
 	while (*(format + i++))
 		format_length++;
 	return (format_length);
@@ -20,7 +21,7 @@ unsigned int fmt_len(const char * const format)
 
 /**
  * print_all - prints everything
- * @format - list of flags
+ * @format: list of flags
  *
  * Return: nothing
  */
@@ -32,7 +33,7 @@ void print_all(const char * const format, ...)
 	va_list valist;
 
 	len = fmt_len(format);
-	va_start (valist, format);
+	va_start(valist, format);
 	while (format[i])
 	{
 		switch (format[i])
