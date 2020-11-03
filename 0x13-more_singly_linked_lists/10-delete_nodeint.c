@@ -4,6 +4,26 @@
 #include "lists.h"
 
 /**
+ * delete_nodeint_at_start - deletes head of list
+ * @head: the list
+ *
+ * Return: 1 on success, -1 on fail
+ */
+
+int delete_nodeint_at_start(listint_t **head)
+{
+	listint_t *temp, *thead;
+
+	if (*head == NULL)
+		return (-1);
+	temp = *head;
+	thead = temp->next;
+	free(temp);
+	*head = thead;
+	return (1);
+}
+
+/**
  * get_nodeint_at_index - returns node at given index
  * @head: the list
  * @index: index of the node starting at 0
@@ -42,10 +62,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *temp_head, *current, *temp;
 
+	if (index == 0)
+		return (delete_nodeint_at_start(head));
 	temp_head = *head;
 	temp = get_nodeint_at_index(temp_head, index);
 	current = get_nodeint_at_index(temp_head, index - 1);
-	if (current == NULL)
+	if (current == NULL || temp == NULL)
 		return (-1);
 	current->next = current->next->next;
 	free(temp);
