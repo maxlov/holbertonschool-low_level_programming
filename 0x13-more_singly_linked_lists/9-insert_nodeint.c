@@ -98,7 +98,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new->next = NULL;
 	temp = get_nodeint_at_index(temp_head, idx);
 	current = get_nodeint_at_index(temp_head, idx - 1);
-	if (current == NULL)
+	if (current == NULL || temp == NULL)
 	{
 		free(new);
 		return (NULL);
