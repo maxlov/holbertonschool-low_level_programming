@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * listint_len - counts number of elements in a list
+ * sum_listint - sums list data
  * @head: head of list
  *
  * Return: sum of all data
