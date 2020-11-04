@@ -3,10 +3,10 @@
 #include "lists.h"
 
 /**
- * print_listint - prints all elements in a list
+ * reverse_listint - reverses list
  * @head: A list
  *
- * Return: pointer to first node of list
+ * Return: reversed list
  */
 
 listint_t *reverse_listint(listint_t **head)
