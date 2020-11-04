@@ -72,6 +72,34 @@ listint_t *add_nodeint(listint_t **head, const int n)
 }
 
 /**
+ * add_nodeint_end2 - adds node to list
+ * @head: the list
+ * @n: a number
+ *
+ * Return: Address of new node
+ */
+
+listint_t *add_nodeint_end2(listint_t **head, const int n)
+{
+	listint_t *new, *temp = *head;
+
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = NULL;
+	if (*head == NULL)
+	{
+		*head = new;
+		return (*head);
+	}
+	while  (temp->next != NULL)
+		temp = temp->next;
+	temp->next = new;
+	return (temp);
+}
+
+/**
  * insert_nodeint_at_index - inserts a node at index
  * @head: the list
  * @idx: index
@@ -88,7 +116,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	temp_head = *head;
 	len = listint_len(temp_head);
 	if (head == NULL || *head == NULL || idx == len)
-		return (add_nodeint_end(head, n));
+		return (add_nodeint_end2(head, n));
 	if (idx == 0)
 		return (add_nodeint(head, n));
 	new = malloc(sizeof(listint_t));
