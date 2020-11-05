@@ -22,11 +22,12 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		len++;
 	}
+	len--;
 	for (pos = 1; len >= 0; len--)
 	{
 		if (*(b + len) == '1')
 			dec += pos;
 		pos = pos * 2;
 	}
-	return (dec / 2);
+	return (dec);
 }
