@@ -28,7 +28,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	int bit = n >> index;
 
-	if (_log2(n) < index)
+	if ((_log2(n) + 1) <= index)
 		return (-1);
 	return (bit & 1);
 }
