@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * binary_to_unit - converts binary # to unsigned dec
+ * binary_to_uint - converts binary # to unsigned dec
  * @b: string
  *
  * Return: Converted number or 0 if failure
@@ -11,7 +11,7 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned dec = 0, pos = 0;
+	unsigned int dec = 0, pos = 0;
 	int len = 0;
 
 	if (b == NULL)
