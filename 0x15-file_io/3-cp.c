@@ -14,10 +14,16 @@
 
 int main(int ac, char **av)
 {
-	char *file_from, *file_to, *buf;
+	char *buf;
 	int fd_from, fd_to, check;
 	unsigned int bytes = 0, bytes_read;
 	ssize_t flag = 0;
+
+	if (ac != 3)
+	{
+		dprintf(2, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
 	buf = malloc(1024);
 	if (buf == NULL)
@@ -26,23 +32,24 @@ int main(int ac, char **av)
 		return (0);
 	}
 
-	if (ac != 3)
-	{
-		dprintf(2, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-
-	file_from = av[1];
-	fd_from = open(file_from, O_RDONLY);
+	fd_from = open(av[1], O_RDONLY);
 	if (fd_from == -1)
 	{
+		free(buf);
 		close(fd_from);
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 
-	file_to = av[2];
-	fd_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	if (fd_to == -1)
+	{
+		close(fd_to);
+		close(fd_from);
+		free(buf);
+		dprintf(2, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
 
 	while (flag != -1)
 	{
@@ -62,7 +69,7 @@ int main(int ac, char **av)
 			close(fd_from);
 			close(fd_to);
 			free(buf);
-			dprintf(2, "Error: Can't write to %s\n", file_to);
+			dprintf(2, "Error: Can't write to %s\n", av[2]);
 			exit(99);
 		}
 	}
