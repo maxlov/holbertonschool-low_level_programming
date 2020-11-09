@@ -21,18 +21,26 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file_descriptor = open(filename, O_RDONLY);
 	if (filename == NULL)
+	{
+		close(file_descriptor);
 		return (0);
+	}
 
 	buff = malloc(sizeof(char) * letters);
 	if (buff == NULL)
+	{
+		clsoe(file_descriptor);
+		free(buff);
 		return (0);
+	}
 
 	letters_actual = read(file_descriptor, buff, letters);
 	if (file_descriptor == -1)
 	{
+		close(file_descriptor);
 		free(buff);
 		return (0);
-        }
+	}
 
 	close(file_descriptor);
 	bytes = write(1, buff, letters_actual);
