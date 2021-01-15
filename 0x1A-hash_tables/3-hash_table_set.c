@@ -34,12 +34,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
-	if (strcmp(ht->array[index]->key, (char *)key))
+	if (strcmp(ht->array[index]->key, (char *)key) == 0)
 	{
 		ht->array[index]->value = (char *)value;
-		free(new->key);
-		free(new->value);
-		free(new);
 		return (1);
 	}
 	new->next = ht->array[index];
