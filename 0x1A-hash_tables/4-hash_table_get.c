@@ -14,19 +14,17 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	hash_node_t *current;
 
-	if (key == NULL || ht == NULL)
+	if (key == NULL || ht == NULL || !(*key))
 		return (NULL);
 
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
 		return (NULL);
 	current = ht->array[index];
-	while (1)
+	while (current != NULL)
 	{
 		if (strcmp((char *)key, current->key) == 0)
 			return (current->value);
-		if (current->next == NULL)
-			break;
 		current = current->next;
 	}
 	return (NULL);
